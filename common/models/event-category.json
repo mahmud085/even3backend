@@ -1,0 +1,23 @@
+{
+  "name": "EventCategory",
+  "base": "PersistedModel",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true
+  },
+  "properties": {
+    "Name": {
+      "type": "string"
+    }
+  },
+  "validations": [],
+  "relations": {
+    "events": {
+      "type": "hasMany",
+      "model": "Event",
+      "foreignKey": "EventCategoryId"
+    }
+  },
+  "acls": [],
+  "methods": {}
+}

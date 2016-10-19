@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Payment Method</title>
+	    <meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		 <!-- Latest compiled and minified CSS -->
+		<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+		<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+		<script type="text/javascript" src="https://js.stripe.com/v2/"></script>
+		<script type="text/javascript">
+			Stripe.setPublishableKey(' pk_test_RmMU4mUFppwRUWOYViGF8ryK');
+		</script>
+
+		<style type="text/css">
+		body { 
+		  background: url("banner.png") no-repeat center center fixed;
+		  -webkit-background-size: cover;
+		  -moz-background-size: cover;
+		  -o-background-size: cover;
+		  background-size: cover;
+		}
+		.jumbotron{
+			background-color: #675c8a;
+			margin-top: 100px;
+
+		}
+		#lbl{
+			color : white;
+		}
+		h3{
+			color : white;
+			text-align: center;
+		}
+
+		</style>
+
+	</head>
+	<body>
+		<div class="container">
+			<div class="row">
+				
+				<div class="col-sm-offset-3 col-md-5 jumbotron">
+					<h3>Payment Card Information</h3>
+					<br>
+				 	<form class="form-horizontal" id="form" action="/card1" method="POST">
+				 		<label id="lbl">Card Information</label>
+  						<div class="form-group">
+    						<div>
+      							<input type="text" class="form-control" id= "cardnumber" name="cardnumber" placeholder="Card Number">
+    						</div>
+  						</div>
+  						<div class="form-group">
+    						<div>
+      							<input type="text" class="form-control" id= "cvc" name="cvc" placeholder="CVC Code">
+    						</div>
+  						</div>
+  						<label id="lbl">Expiration Date:</label>
+  						<div class="form-group">
+    						<div>
+      							<input type="number" class="form-control" id= "month" name="month" placeholder="MM">
+    						</div>
+  						</div>
+  						<div class="form-group">
+    						<div>
+      							<input type="number" class="form-control" id= "year" name="year" placeholder="YYYY">
+    						</div>
+  						</div>
+  						<div class="form-group">
+  							<div class="col-sm-offset-8">
+ 								<button type="submit" class="btn btn-default" id="submit-btn">Submit</button>
+ 							</div>
+ 						</div>
+ 						<script
+
+						</script>
+					</form>
+				</div>
+			</div>
+		</div>
+	</body>
+</html>
+
+
+
+				

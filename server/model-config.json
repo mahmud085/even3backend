@@ -1,0 +1,145 @@
+{
+  "_meta": {
+    "sources": [
+      "loopback/common/models",
+      "loopback/server/models",
+      "loopback/node_modules/loopback-component-passport/lib/models",
+      "../common/models",
+      "./models"
+    ],
+    "mixins": [
+      "loopback/common/mixins",
+      "loopback/server/mixins",
+      "../common/mixins",
+      "./mixins"
+    ]
+  },
+  "User": {
+    "dataSource": "db"
+  },
+  "AccessToken": {
+    "dataSource": "db",
+    "public": false
+  },
+  "ACL": {
+    "dataSource": "db",
+    "public": false
+  },
+  "RoleMapping": {
+    "dataSource": "db",
+    "public": false
+  },
+  "Role": {
+    "dataSource": "db",
+    "public": false
+  },
+  "Email": {
+    "dataSource": "sendgrid",
+    "public": false
+  },
+  "Account": {
+    "dataSource": "myDB",
+    "public": true,
+    "options": {
+      "emailVerificationRequired": true
+    }
+  },
+  "container": {
+    "dataSource": "myFile",
+    "public": true
+  },
+  "Event": {
+    "dataSource": "myDB",
+    "public": true
+  },
+  "EventComment": {
+    "dataSource": "myDB",
+    "public": true
+  },
+  "EventCategory": {
+    "dataSource": "myDB",
+    "public": true
+  },
+  "Card": {
+    "dataSource": "myDB",
+    "public": true
+  },
+  "Business": {
+    "dataSource": "myDB",
+    "public": true
+  },
+  "BusinessCategory": {
+    "dataSource": "myDB",
+    "public": true
+  },
+  "Service": {
+    "dataSource": "myDB",
+    "public": true
+  },
+  "Ticket": {
+    "dataSource": "myDB",
+    "public": true
+  },
+  "TicketPurchase": {
+    "dataSource": "myDB",
+    "public": true
+  },
+  "CommentLike": {
+    "dataSource": "myDB",
+    "public": true
+  },
+  "Participant": {
+    "dataSource": "myDB",
+    "public": true
+  },
+  "TicketPurchaseDetail": {
+    "dataSource": "myDB",
+    "public": true
+  },
+  "application": {
+    "dataSource": "myDB",
+    "public": true
+  },
+  "push": {
+    "dataSource": "push",
+    "public": true
+  },
+  "installation": {
+    "dataSource": "myDB",
+    "public": true
+  },
+  "notification": {
+    "dataSource": "myDB",
+    "public": true
+  },
+  "savedBusiness": {
+    "dataSource": "db",
+    "public": true,
+    "$promise": {},
+    "$resolved": true
+  },
+  "rating": {
+    "dataSource": "myDB",
+    "public": true
+  },
+  "subscribers": {
+    "dataSource": "myDB",
+    "public": true
+  },
+  "interest": {
+    "dataSource": "myDB",
+    "public": true
+  },
+  "chat": {
+    "dataSource": "myDB",
+    "public": true
+  },
+  "message": {
+    "dataSource": "myDB",
+    "public": true
+  },
+  "admin": {
+    "dataSource": "myDB",
+    "public": true
+  }
+}

@@ -1,0 +1,36 @@
+{
+  "name": "TicketPurchaseDetail",
+  "base": "PersistedModel",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true
+  },
+  "properties": {
+    "Consumed": {
+      "type": "boolean"
+    },
+    "TimeOfPurchase": {
+      "type": "number"
+    }
+  },
+  "validations": [],
+  "relations": {
+    "account": {
+      "type": "belongsTo",
+      "model": "Account",
+      "foreignKey": "AccountId"
+    },
+    "ticketPurchase": {
+      "type": "belongsTo",
+      "model": "TicketPurchase",
+      "foreignKey": "TicketPurchaseId"
+    },
+    "event": {
+      "type": "belongsTo",
+      "model": "Event",
+      "foreignKey": "EventId"
+    }
+  },
+  "acls": [],
+  "methods": {}
+}

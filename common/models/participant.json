@@ -1,0 +1,32 @@
+{
+  "name": "Participant",
+  "base": "PersistedModel",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true
+  },
+  "properties": {
+    "Invited": {
+      "type": "boolean"
+    },
+    "Rsvp": {
+      "type": "number",
+      "default": 0
+    }
+  },
+  "validations": [],
+  "relations": {
+    "event": {
+      "type": "belongsTo",
+      "model": "Event",
+      "foreignKey": "EventId"
+    },
+    "account": {
+      "type": "belongsTo",
+      "model": "Account",
+      "foreignKey": "AccountId"
+    }
+  },
+  "acls": [],
+  "methods": {}
+}

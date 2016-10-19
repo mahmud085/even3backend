@@ -1,0 +1,23 @@
+{
+  "name": "BusinessCategory",
+  "base": "PersistedModel",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true
+  },
+  "properties": {
+    "Name": {
+      "type": "string"
+    }
+  },
+  "validations": [],
+  "relations": {
+    "businesses": {
+      "type": "hasMany",
+      "model": "Business",
+      "foreignKey": "BusinessCategoryId"
+    }
+  },
+  "acls": [],
+  "methods": {}
+}

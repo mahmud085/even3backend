@@ -1,0 +1,48 @@
+{
+  "name": "Event-Management",
+  "version": "1.0.0",
+  "main": "server/server.js",
+  "scripts": {
+    "start": "slc run",
+    "pretest": "jshint ."
+  },
+  "dependencies": {
+    "body-parser": "^1.15.0",
+    "compression": "^1.0.3",
+    "cors": "^2.5.2",
+    "ee-first": "^1.1.1",
+    "errorhandler": "^1.1.1",
+    "kue": "~0.6.2",
+    "loopback": "^2.14.0",
+    "loopback-boot": "^2.9.0",
+    "loopback-component-passport": "^1.5.0",
+    "loopback-component-push": "^1.5.1",
+    "loopback-component-storage": "latest",
+    "loopback-connector-mongodb": "^1.11.3",
+    "loopback-connector-sendgrid": "1.0.3",
+    "loopback-datasource-juggler": "^2.19.0",
+    "moment": "^2.12.0",
+    "passport": "^0.2.0",
+    "passport-facebook": "^1.0.3",
+    "passport-google-oauth": "^0.1.5",
+    "passport-local": "^1.0.0",
+    "passport-oauth2": "^1.1.2",
+    "passport-twitter": "^1.0.2",
+    "redis": "*",
+    "serve-favicon": "^2.0.1",
+    "stripe": "^4.0.0",
+    "node-uuid": "^1.4.7",
+    "paystack": "^1.1.0"
+  },
+  "optionalDependencies": {
+    "loopback-explorer": "^1.1.0"
+  },
+  "devDependencies": {
+    "jshint": "^2.5.6"
+  },
+  "repository": {
+    "type": "",
+    "url": ""
+  },
+  "description": "Event-Management"
+}

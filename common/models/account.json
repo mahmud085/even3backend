@@ -1,0 +1,220 @@
+{
+  "name": "Account",
+  "base": "User",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true
+  },
+  "properties": {
+    "FirstName": {
+      "type": "string"
+    },
+    "LastName": {
+      "type": "string"
+    },
+    "Newsletter": {
+      "type": "boolean"
+    },
+    "UserPicture": {
+      "type": "string"
+    },
+    "FacebookID": {
+      "type": "number"
+    },
+    "GoogleID": {
+      "type": "number"
+    },
+    "Friends": {
+      "type": [
+        "string"
+      ]
+    },
+    "accessTokenFacebook": {
+      "type": "string"
+    },
+    "accessTokenGoogle": {
+      "type": "string"
+    },
+    "SavedBusiness": {
+      "type": [
+        "number"
+      ]
+    },
+    "EmailNotification": {
+      "type": "boolean"
+    },
+    "PushNotification": {
+      "type": "boolean"
+    },
+    "phone": {
+      "type": "string"
+    },
+    "tokenToRef":{
+      "type":"string"
+    },
+    "tokenFromRef":{
+      "type":"string"
+    },
+    "bonuspoint":{
+      "type":"number",
+      "default": 0
+    }
+  },
+  "validations": [],
+  "relations": {
+    "eventcomment": {
+      "type": "hasMany",
+      "model": "EventComment",
+      "foreignKey": "AccountId"
+    },
+    "events": {
+      "type": "hasMany",
+      "model": "Event",
+      "foreignKey": "AccountId"
+    },
+    "cards": {
+      "type": "hasMany",
+      "model": "Card",
+      "foreignKey": "AccountId"
+    },
+    "businesses": {
+      "type": "hasMany",
+      "model": "Business",
+      "foreignKey": "AccountId"
+    },
+    "ticketPurchases": {
+      "type": "hasMany",
+      "model": "TicketPurchase",
+      "foreignKey": "AccountId"
+    },
+    "participant": {
+      "type": "hasOne",
+      "model": "Participant",
+      "foreignKey": "AccountId"
+    },
+    "ticketPurchaseDetails": {
+      "type": "hasMany",
+      "model": "TicketPurchaseDetail",
+      "foreignKey": "AccountId"
+    }
+  },
+  "acls": [
+    {
+      "accessType": "*",
+      "principalType": "ROLE",
+      "principalId": "everyone",
+      "permission": "ALLOW"
+    },
+    {
+      "accessType": "READ",
+      "principalType": "ROLE",
+      "principalId": "$authenticated",
+      "permission": "ALLOW"
+    },
+    {
+      "accessType": "*",
+      "principalType": "ROLE",
+      "principalId": "$owner",
+      "permission": "ALLOW"
+    },
+    {
+      "accessType": "EXECUTE",
+      "principalType": "ROLE",
+      "principalId": "$owner",
+      "permission": "ALLOW",
+      "property": "editaccount"
+    },
+    {
+      "accessType": "EXECUTE",
+      "principalType": "ROLE",
+      "principalId": "$unauthenticated",
+      "permission": "DENY",
+      "property": "editaccount"
+    },
+    {
+      "accessType": "EXECUTE",
+      "principalType": "ROLE",
+      "principalId": "$authenticated",
+      "permission": "ALLOW",
+      "property": "editaccount"
+    },
+    {
+      "accessType": "EXECUTE",
+      "principalType": "ROLE",
+      "principalId": "$owner",
+      "permission": "ALLOW",
+      "property": "addtoken"
+    },
+    {
+      "accessType": "EXECUTE",
+      "principalType": "ROLE",
+      "principalId": "$unauthenticated",
+      "permission": "DENY",
+      "property": "addtoken"
+    },
+    {
+      "accessType": "EXECUTE",
+      "principalType": "ROLE",
+      "principalId": "$authenticated",
+      "permission": "ALLOW",
+      "property": "addtoken"
+    },
+    {
+      "accessType": "EXECUTE",
+      "principalType": "ROLE",
+      "principalId": "$everyone",
+      "permission": "ALLOW",
+      "property": "addaccount"
+    },
+    {
+      "accessType": "EXECUTE",
+      "principalType": "ROLE",
+      "principalId": "$everyone",
+      "permission": "ALLOW",
+      "property": "socialsignin"
+    },
+    {
+      "accessType": "EXECUTE",
+      "principalType": "ROLE",
+      "principalId": "$unauthenticated",
+      "permission": "ALLOW",
+      "property": "sendemail"
+    },
+    {
+      "accessType": "EXECUTE",
+      "principalType": "ROLE",
+      "principalId": "$authenticated",
+      "permission": "ALLOW",
+      "property": "sendemail"
+    },
+    {
+      "accessType": "EXECUTE",
+      "principalType": "ROLE",
+      "principalId": "$unauthenticated",
+      "permission": "ALLOW",
+      "property": "passwordreset"
+    },
+    {
+      "accessType": "EXECUTE",
+      "principalType": "ROLE",
+      "principalId": "$unauthenticated",
+      "permission": "ALLOW",
+      "property": "unsubscribe"
+    },
+    {
+      "accessType": "EXECUTE",
+      "principalType": "ROLE",
+      "principalId": "$authenticated",
+      "permission": "ALLOW",
+      "property": "invitefriend"
+    },
+    {
+      "accessType": "EXECUTE",
+      "principalType": "ROLE",
+      "principalId": "$unauthenticated",
+      "permission": "ALLOW",
+      "property": "resendLink"
+    }
+  ],
+  "methods": {}
+}

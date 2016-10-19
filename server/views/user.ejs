@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+		<title>USer</title>
+		<% include head %>
+		<script type="text/javascript"> 
+		$(function () {
+			$('#dltUser').click(function () {
+
+  				alert("Do You really want to delete the user? It will delete corresponding events and services too ");
+			});
+		});
+		</script>
+</head>
+<body>
+	<header>
+		<% include navigation %>
+	</header>
+		<table class="table table-bordered">
+			<thead>
+				<td>Name</td>
+				<td>Email</td>
+			</thead>
+			<tbody>
+				<% for (var i = 0; i < users.length; i++) { %>
+				<tr>
+					<td>
+						<%= users[i].FirstName %>
+					</td>
+					<td>
+						<%= users[i].email %>
+					</td>
+					<td>
+						<a id="dltUser" href="/delete/<%= users[i].id %>"><span class="btn btn-danger glyphicon glyphicon-remove" ></span>
+						</a>
+					</td>
+				</tr>
+				<% } %>
+			</tbody>
+		</table>
+
+
+</body>
+</html>

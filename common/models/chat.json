@@ -1,0 +1,24 @@
+{
+  "name": "chat",
+  "base": "PersistedModel",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true
+  },
+  "properties": {},
+  "validations": [],
+  "relations": {
+    "account": {
+      "type": "belongsTo",
+      "model": "Account",
+      "foreignKey": "AccountId"
+    },
+    "business": {
+      "type": "belongsTo",
+      "model": "Business",
+      "foreignKey": "businessId"
+    }
+  },
+  "acls": [],
+  "methods": {}
+}

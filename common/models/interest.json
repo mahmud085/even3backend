@@ -1,0 +1,26 @@
+{
+  "name": "interest",
+  "base": "PersistedModel",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true
+  },
+  "properties": {
+    "AccountId": {
+      "type": "string"
+    },
+    "names": {
+      "type": "array"
+    }
+  },
+  "validations": [],
+  "relations": {
+    "account": {
+      "type": "hasMany",
+      "model": "Account",
+      "foreignKey": "AccountId"
+    }
+  },
+  "acls": [],
+  "methods": {}
+}

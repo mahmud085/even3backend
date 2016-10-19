@@ -1,0 +1,64 @@
+{
+  "name": "TicketPurchase",
+  "base": "PersistedModel",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true
+  },
+  "properties": {
+    "Purchased": {
+      "type": "number"
+    },
+    "TransactionId": {
+      "type": "string"
+    },
+    "TimeOfTicket": {
+      "type": "number"
+    }
+  },
+  "validations": [],
+  "relations": {
+    "account": {
+      "type": "belongsTo",
+      "model": "Account",
+      "foreignKey": "AccountId"
+    },
+    "ticket": {
+      "type": "belongsTo",
+      "model": "Ticket",
+      "foreignKey": "TicketId"
+    },
+    "ticketPurchaseDetails": {
+      "type": "hasMany",
+      "model": "TicketPurchaseDetail",
+      "foreignKey": "TicketPurchaseId"
+    }
+  },
+  "acls": [
+    {
+      "accessType": "*",
+      "principalType": "ROLE",
+      "principalId": "admin",
+      "permission": "ALLOW"
+    },
+    {
+      "accessType": "READ",
+      "principalType": "ROLE",
+      "principalId": "$unauthenticated",
+      "permission": "DENY"
+    },
+    {
+      "accessType": "READ",
+      "principalType": "ROLE",
+      "principalId": "$authenticated",
+      "permission": "ALLOW"
+    },
+    {
+      "accessType": "*",
+      "principalType": "ROLE",
+      "principalId": "$owner",
+      "permission": "ALLOW"
+    }
+  ],
+  "methods": {}
+}

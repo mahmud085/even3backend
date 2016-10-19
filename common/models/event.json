@@ -1,0 +1,133 @@
+{
+  "name": "Event",
+  "base": "PersistedModel",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true
+  },
+  "properties": {
+    "Name": {
+      "type": "string"
+    },
+    "EventPicture": {
+      "type": "string"
+    },
+    "Description": {
+      "type": "string"
+    },
+    "StartDate": {
+      "type": "number"
+    },
+    "EndDate": {
+      "type": "number"
+    },
+    "Location": {
+      "type": "GeoPoint"
+    },
+    "Address": {
+      "type": "string"
+    },
+    "Invited": {
+      "type": [
+        "string"
+      ]
+    },
+    "creator": {
+      "type": "Account"
+    },
+    "Phone": {
+      "type": "string"
+    },
+    "email": {
+      "type": "string"
+    },
+    "Website": {
+      "type": "string"
+    },
+    "status": {
+      "type": "string"
+    }
+  },
+  "validations": [],
+  "relations": {
+    "account": {
+      "type": "belongsTo",
+      "model": "Account",
+      "foreignKey": "AccountId"
+    },
+    "eventCategory": {
+      "type": "belongsTo",
+      "model": "EventCategory",
+      "foreignKey": "EventCategoryId"
+    },
+    "tickets": {
+      "type": "hasMany",
+      "model": "Ticket",
+      "foreignKey": "EventId"
+    },
+    "participants": {
+      "type": "hasMany",
+      "model": "Participant",
+      "foreignKey": "EventId"
+    },
+    "ticketPurchaseDetails": {
+      "type": "hasMany",
+      "model": "TicketPurchaseDetail",
+      "foreignKey": "EventId"
+    }
+  },
+  "acls": [
+    {
+      "accessType": "*",
+      "principalType": "ROLE",
+      "principalId": "admin",
+      "permission": "ALLOW"
+    },
+    {
+      "accessType": "READ",
+      "principalType": "ROLE",
+      "principalId": "$unauthenticated",
+      "permission": "ALLOW"
+    },
+    {
+      "accessType": "READ",
+      "principalType": "ROLE",
+      "principalId": "$authenticated",
+      "permission": "ALLOW"
+    },
+    {
+      "accessType": "*",
+      "principalType": "ROLE",
+      "principalId": "$owner",
+      "permission": "ALLOW"
+    },
+    {
+      "accessType": "WRITE",
+      "principalType": "ROLE",
+      "principalId": "$unauthenticated",
+      "permission": "ALLOW"
+    },
+    {
+      "accessType": "EXECUTE",
+      "principalType": "ROLE",
+      "principalId": "$owner",
+      "permission": "ALLOW",
+      "property": "newEvent"
+    },
+    {
+      "accessType": "EXECUTE",
+      "principalType": "ROLE",
+      "principalId": "$unauthenticated",
+      "permission": "DENY",
+      "property": "newEvent"
+    },
+    {
+      "accessType": "EXECUTE",
+      "principalType": "ROLE",
+      "principalId": "$unauthenticated",
+      "permission": "ALLOW",
+      "property": "deleteevent"
+    }
+  ],
+  "methods": {}
+}

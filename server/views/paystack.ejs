@@ -1,0 +1,62 @@
+
+<!DOCTYPE html>
+<html>
+	<head>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+	<script>
+		  function payWithPaystack(){
+		  	//alert($('#email').val());
+		    var handler = PaystackPop.setup({
+		      key: 'pk_test_3fb6fc317c4e32157966f9ab70ed769d08ad1c58',
+		      email: $('#email').val(),
+		      amount: $('#amount').val(),
+		      metadata: {
+		        
+		      },
+		      callback: function(response){
+		          alert('success. transaction ref is ' + response.reference);
+		      },
+		      onClose: function(){
+		          alert('window closed');
+		      }
+		    });
+		    handler.openIframe();
+		  }
+</script>
+	</head>
+	<body>
+		<form action="/card1" method="POST" >
+			<input id="email" type="email"  placeholder="Your email address" autocomplete="off">
+			<input id="amount" type="text"  placeholder="Your Amount" autocomplete="off">
+			<button type="button" onclick="payWithPaystack()"> Pay </button> 
+			<script src="https://js.paystack.co/v1/inline.js"></script>
+		</form>
+	</body>
+</html>
+ 
+
+
+ <!-- <!DOCTYPE html>
+<html>
+	<head>
+ 	 <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+	<script type="text/javascript">
+		$(function(){
+			$( "#scr" ).data( "email", "mahmud_cse15@yahoo.com" );	
+		})
+
+	</script>
+	</head>
+	<body>
+		<form action="/card1" method="POST" >
+
+		  <script id="scr"
+		    src="https://js.paystack.co/v1/inline.js" 
+		    data-key="pk_test_3fb6fc317c4e32157966f9ab70ed769d08ad1c58"
+		    data-email
+		    data-amount="10000"
+		  >
+		  </script>
+</form>
+	</body>
+</html> -->

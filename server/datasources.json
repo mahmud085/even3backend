@@ -1,0 +1,50 @@
+{
+  "db": {
+    "name": "db",
+    "connector": "memory"
+  },
+  "myFile": {
+    "name": "myFile",
+    "connector": "loopback-component-storage",
+    "provider": "filesystem",
+    "root": "./server/storage",
+    "maxFileSize": "52428800"
+  },
+  "myDB": {
+    "host": "localhost",
+    "port": 27017,
+    "database": "FirstDB",
+    "name": "myDB",
+    "connector": "mongodb"
+  },
+  "myEmailDataSource": {
+    "name": "myEmailDataSource",
+    "connector": "mail",
+    "defaultForType": "mail",
+    "transports": [
+      {
+        "type": "SMTP",
+        "host": "smtp.gmail.com",
+        "secure": true,
+        "port": 465,
+        "auth": {
+          "user": "sniperefat@gmail.com",
+          "pass": "1234Refat456"
+        }
+      }
+    ]
+  },
+  "sendgrid": {
+    "name": "sendgrid",
+    "connector": "loopback-connector-sendgrid",
+    "api_user": "even3co",
+    "api_key": "even3co1234"
+  },
+  "push": {
+    "name": "push",
+    "connector": "loopback-component-push",
+    "installation": "installation",
+    "notification": "notification",
+    "application": "application"
+  }
+}

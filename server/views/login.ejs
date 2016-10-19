@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Login</title>
+	    <meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		 <!-- Latest compiled and minified CSS -->
+		<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+		<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+		<style type="text/css">
+	
+		body { 
+		  background: url("banner.png") no-repeat center center fixed;
+		  -webkit-background-size: cover;
+		  -moz-background-size: cover;
+		  -o-background-size: cover;
+		  background-size: cover;
+		}
+		.jumbotron{
+			background-color: #675c8a;
+			margin-top: 100px;
+
+		}
+		.lbl{
+			color : white;
+		}
+		h3{
+			color : white;
+			text-align: center;
+		}
+
+		</style>
+		<script>
+			function myFunction() {
+			    if(document.getElementById("newpass").value !== document.getElementById("conpass").value ){
+			    	alert("Password does not matched! Try Again!");
+			    }
+			}
+		</script>
+	</head>
+	<body>
+		<div class="container">
+			<div class="row">
+				
+				<div class="col-sm-offset-3 col-md-6 jumbotron">
+					<h3>Please Login to Continue</h3>
+					<br>
+				 	<form class="form-horizontal" role="form" action="/login" method="POST">
+  						<div class="form-group">
+    						<label class="control-label col-sm-4 lbl" for="username">Username  :</label>
+    						<div class="col-sm-8">
+      							<input type="text" class="form-control" id= "username"name="username">
+    						</div>
+  						</div>
+  						<div class="form-group">
+     						<label class="control-label col-sm-4 lbl" for="pass">Password  :</label>
+    						<div class="col-sm-8">
+      							<input type="password" onchange="myFunction()" class="form-control" id= "pass" name="pass">
+    						</div>
+  						</div>
+  						<div class="form-group">
+  							<div class="col-sm-offset-10">
+ 								<button type="submit" class="btn btn-default">Login</button>
+ 							</div>
+ 						</div>
+					</form>
+					<div class="alert alert-danger" style="visibility : <%= showErr %>">
+                        <strong><%= err_msg %></strong>
+                    </div>
+				</div>
+			</div>
+		</div>
+	</body>
+</html>
+
+
+
+				

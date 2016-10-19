@@ -1,0 +1,29 @@
+{
+  "name": "message",
+  "base": "PersistedModel",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true
+  },
+  "properties": {},
+  "validations": [],
+  "relations": {
+    "sender": {
+      "type": "belongsTo",
+      "model": "Account",
+      "foreignKey": "senderId"
+    },
+    "receiver": {
+      "type": "belongsTo",
+      "model": "Account",
+      "foreignKey": "receiverId"
+    },
+    "chat": {
+      "type": "belongsTo",
+      "model": "chat",
+      "foreignKey": "chatId"
+    }
+  },
+  "acls": [],
+  "methods": {}
+}

@@ -1,0 +1,129 @@
+{
+  "_meta": {
+    "sources": [
+      "loopback/common/models",
+      "loopback/server/models",
+      "loopback/node_modules/loopback-component-passport/lib/models",
+      "../common/models",
+      "./models"
+    ],
+    "mixins": [
+      "loopback/common/mixins",
+      "loopback/server/mixins",
+      "../common/mixins",
+      "./mixins"
+    ]
+  },
+  "User": {
+    "dataSource": "db"
+  },
+  "AccessToken": {
+    "dataSource": "db",
+    "public": false
+  },
+  "ACL": {
+    "dataSource": "db",
+    "public": false
+  },
+  "RoleMapping": {
+    "dataSource": "db",
+    "public": false
+  },
+  "Role": {
+    "dataSource": "db",
+    "public": false
+  },
+  "Email": {
+    "dataSource": "sendgrid",
+    "public": false
+  },
+  "Account": {
+    "dataSource": "prodDB",
+    "public": true,
+    "options": {
+      "emailVerificationRequired": true
+    }
+  },
+  "container": {
+    "dataSource": "prodFile",
+    "public": true
+  },
+  "Event": {
+    "dataSource": "prodDB",
+    "public": true
+  },
+  "EventComment": {
+    "dataSource": "prodDB",
+    "public": true
+  },
+  "EventCategory": {
+    "dataSource": "prodDB",
+    "public": true
+  },
+  "Card": {
+    "dataSource": "prodDB",
+    "public": true
+  },
+  "Business": {
+    "dataSource": "prodDB",
+    "public": true
+  },
+  "BusinessCategory": {
+    "dataSource": "prodDB",
+    "public": true
+  },
+  "Service": {
+    "dataSource": "prodDB",
+    "public": true
+  },
+  "Ticket": {
+    "dataSource": "prodDB",
+    "public": true
+  },
+  "TicketPurchase": {
+    "dataSource": "prodDB",
+    "public": true
+  },
+  "CommentLike": {
+    "dataSource": "prodDB",
+    "public": true
+  },
+  "Participant": {
+    "dataSource": "prodDB",
+    "public": true
+  },
+  "TicketPurchaseDetail": {
+    "dataSource": "prodDB",
+    "public": true
+  },
+  "application": {
+    "dataSource": "prodDB",
+    "public": true
+  },
+  "push": {
+    "dataSource": "push",
+    "public": true
+  },
+  "installation": {
+    "dataSource": "prodDB",
+    "public": true
+  },
+  "notification": {
+    "dataSource": "prodDB",
+    "public": true
+  },
+  "savedBusiness": {
+    "dataSource": "db",
+    "public": true,
+    "$promise": {},
+    "$resolved": true
+  },
+  "rating": {
+    "dataSource": "prodDB",
+    "public": true
+  },
+  "subscribers": {
+    "dataSource": "prodDB",
+    "public": true
+  }
+}
